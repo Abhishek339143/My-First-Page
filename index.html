@@ -1,6 +1,150 @@
+
+<!DOCTYPE html>
 <html>
-<head></head>
-<body>
-<h1><i>ABHISHEK</i></h1>
-</body>
+    <head>
+        <title>Page Title</title>
+    <style>
+         body{
+    background-color:white;
+}
+#i{
+    height:400px;
+    width:200px;
+    background-color:red;
+    position:absolute;
+    left:100px;
+    top:100px;
+    overflow-y:scroll;
+    border:15px green groove;
+}
+#j{
+    height:50px;
+    width:25px;
+    background-color:yellow;
+    position:relative;
+}
+#one{
+    height:40px;
+    width:100px;
+    position:absolute;
+    left:200px;
+    top:540px;
+    background-color:white;
+}
+#four{
+    height:100px;
+    width:50px;
+    position:absolute;
+    left:160px;
+    top:570px;
+    background-color:white;
+}
+#three{
+    height:100px;
+    width:50px;
+    position:absolute;
+    left:200px;
+    top:600px;
+    background-color:white;
+}
+#two{
+    height:100px;
+    width:50px;
+    position:absolute;
+    left:240px;
+    top:570px;
+    background-color:white;
+}
+#ref{
+    height:40px;
+    width:95px;
+    position:absolute;
+    right:10px;
+    top:5px;
+    background-color:white;
+}
+
+    </style>
+    </head>
+    <body>
+    <div id="i">
+        <div id="j"></div>
+    </div>
+    <div id="one">
+     <button id="top">⬆️</button>
+     </div>
+     <div id="four">
+     <button id="left">⬅️</button>
+     </div>
+     <div id="three">
+     <button id="bottom">⬇️</button>
+     </div>
+     <div id="two">
+     <button id="right">➡️</button>
+     </div>
+     <div id="ref"></div>
+    </body>
+    <script>
+alert("This is my first code with Html,css and js combined..Any suggestions and advices are welcome..");
+window.onload=function loader(){
+    up=0
+    side=0
+    var a=document.getElementById("j")
+    var b1=document.getElementById("top")
+    var b2=document.getElementById("right")
+    var b3=document.getElementById("bottom")
+    var b4=document.getElementById("left")
+    var b=document.createElement("p")
+    var c=document.createTextNode("X:"+side+","+"Y:"+up)
+    b.appendChild(c)
+    var d=document.getElementById("ref")
+    d.appendChild(b)
+    b1.addEventListener("click",top)
+    b2.addEventListener("click",right)
+    b3.addEventListener("click",bottom)
+    b4.addEventListener("click",left)
+    function top(){
+        if(up==0){
+            alert("No more movement in this direction,Please try in another direction")
+        }
+        else if(up<10 && up>0){
+            up-=1
+            a.style.top=up+"px"
+            d.innerHTML="X:"+side+","+"Y:"+up
+        }
+        else{
+            up-=10
+            a.style.top=up+"px"
+            d.innerHTML="X:"+side+","+"Y:"+up
+        }
+    }
+    function right(){
+        side+=10
+        a.style.left=side+"px"
+        d.innerHTML="X:"+side+","+"Y:"+up
+    }
+    function bottom(){
+        up+=10
+        a.style.top=up+"px"
+        d.innerHTML="X:"+side+","+"Y:"+up
+    }
+    function left(){
+           if(side==0){
+            alert("No more movement in this direction,Please try in another direction")
+        }
+        else if(side<10 && side>0){
+            side-=1
+            a.style.side=side+"px"
+            d.innerHTML="X:"+side+","+"Y:"+up
+        }
+        else{ 
+            side-=10
+            a.style.left=side+"px"
+            d.innerHTML="X:"+side+","+"Y:"+up
+        }
+        
+    }
+    
+}
+    </script>
 </html>
